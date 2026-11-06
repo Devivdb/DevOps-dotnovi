@@ -14,17 +14,27 @@ dotNOVI en je zorgt dat er geen wachtwoorden op GitHub belanden.
 
 ### Opdracht 1: dotNOVI starten en verkennen
 
-1. Fork [hogeschoolnovi/DevOps-dotnovi-week1](https://github.com/hogeschoolnovi/DevOps-dotnovi-week1) op GitHub.
-2. Clone je fork en start de app:
+1. Maak op GitHub onder je eigen account een nieuwe, lege repository aan.
+2. Clone [hogeschoolnovi/DevOps-dotnovi-week1](https://github.com/hogeschoolnovi/DevOps-dotnovi-week1) en push de code
+   naar je eigen repository:
 
    ```bash
-   git clone <jouw-fork-url>
+   git clone git@github.com:hogeschoolnovi/DevOps-dotnovi-week1.git
    cd DevOps-dotnovi-week1
+   git remote remove origin
+   git remote add origin git@github.com:<jouw-gebruikersnaam>/<jouw-repository>.git
+   git branch -M main
+   git push -u origin main
+   ```
+
+3. Start de app:
+
+   ```bash
    npm install
    npm start
    ```
 
-3. Open deze adressen in je browser en bekijk wat je ziet:
+4. Open deze adressen in je browser en bekijk wat je ziet:
     - http://localhost:3000/
     - http://localhost:3000/health
     - http://localhost:3000/api/notes
@@ -32,7 +42,7 @@ dotNOVI en je zorgt dat er geen wachtwoorden op GitHub belanden.
    Zie je foutmeldingen? Die zijn in deze les normaal: de applicatie draait, maar er is nog geen database gekoppeld. Dit
    gaan we in een latere opdracht oplossen.
 
-4. Bekijk de bestanden in de repo. Noteer minstens drie dingen die ontbreken om de app automatisch te testen, te bouwen,
+5. Bekijk de bestanden in de repo. Noteer minstens drie dingen die ontbreken om de app automatisch te testen, te bouwen,
    uit te rollen of in de gaten te houden. Geef per punt in één zin aan waarom het nodig is. Dit lijstje gebruik je in
    opdracht 3.
 
@@ -59,7 +69,7 @@ In deze opdracht voeg je via een feature branch en een Pull Request een extra en
    git push origin feature/add-about-endpoint
    ```
 
-5. Open op GitHub een Pull Request van je feature branch naar `main`. **Let op**: zorg ervoor dat hiervoor jouw _eigen_ repository vergeleken wordt.
+5. Open op GitHub in je eigen repository een Pull Request van je feature branch naar `main`.
 6. Vul de PR-beschrijving in met deze opzet:
 
    ```markdown
